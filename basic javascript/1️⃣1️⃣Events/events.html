@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>events</title>
+    <style>
+        body{
+            background-color:darkslateblue;
+            
+        }
+        p{
+            color:darkslateblue;
+            width:100px;
+            height:60px;
+            margin:20px auto;
+            font-size:20px;
+            border:1px solid lightblue;
+            border-radius:10px;
+            background-color:white;
+            box-shadow:2px 2px 4px white;
+            padding: 10px;
+        }
+        p:hover{
+            box-shadow:none; 
+        }
+    </style>
+</head>
+<body>
+    <!--Events are any action performed. Or we can say that "anything that happens to the html elements is called an event. 
+        We can use javascript to fire the events."-->
+    <!--There are 4 ways to fire the events in javascript:
+    1.Inline(in an element )
+    2.By calling a function
+    3.
+    4.Element.addEventListener("event",callback)
+     -->
+     <p id="way1" onclick="alert('I am awsome but no one uses me.');">
+         Simple Inline alert()
+    </p>
+    <p id="way2" onclick="myClick()">
+        Function Called
+    </p>
+    <p id="way3">
+       Calling an event using id
+    </p>
+    <p id="way4">
+     add Event Listener
+    </p>
+     <script>
+        //  this is second way
+         const myClick = () => {
+            alert('This is an avent occurred by calling a function.');//can't use reserved words as function name.
+         }
+          //  this is fourth way
+          const way3 = document.getElementById("way3");
+          way3.onclick=()=>{
+              alert("This is the third way.")
+          }
+        //  this is fourth way
+         const way4 = document.getElementById("way4");
+         way4.addEventListener("click",()=>{    //a callback functionis used . a callback function is a function passed as an
+                                                 //argument inside a function or method.
+             alert("I am fired.")
+         })
+
+         ///Differene between onclick and addEventListener 
+         //addEventListener doesnot overwrite but onclick overwrites the events.
+         //the onclick method fres the event that occurs at last but addEventListener fires all the events from top to bottom.
+         //addEventListner is not supported in internet explorer before version 9.0.
+     </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body{
+            background-color:darkslateblue;
+        }
+        p{
+            color:white;
+            font-size:30px;
+            width:50px;
+            height:50px;
+            margin:100px auto;
+        }
+        button{
+            color:darkslateblue;
+            background-color:white;
+            width:70px;
+            margin:10px 720px;
+            padding:10px;
+            font-size:20px;
+            font-weight:bold;
+            border:1px solid white;
+            box-shadow:2px 2px 4px white;
+        }
+    </style>
+</head>
+<body>
+    <p>Wait!</p>
+ <button>stop</button>
+    <script>
+//The timing events are used either to delay the execution of some code or to repeat some code at regular intervals.
+//For these purposes wee have two timing events : setTimeout() and setInterval().
+//other two methods to stop the execution due to these timing functions are clearTimeout() and clearInterval().
+//clearTimeout() is paired with setTimeout() and clearInterval() is paired with setInterval().
+
+///////////setTimeout()/////////////////////////     ///////////////////setInterval()////////////////////////////
+//👉setTimeout is used when we want to execute some    //👉setInterval() method repeats the given code(function) after  
+// code(function) after waiting for some time.          // regular time intervals.
+// The code(function) executes only once after the     //the code(function) runs multiple times after the regular intervals
+// given time interval                                  //of time, until it is stopped using clearInterval()
+// example:                                              //example
+//   function myfunc(){                                       function myfunc(){
+//     alert("hey! there.");                                         alert("hey! there.");
+//    }                                                              }
+// setTimeout(myfunc,5000);                                     setInterval(myfunc,5000);
+ //function executes once after delay of 5 sec.               //The message ("hey! there") is displayed
+ // the message ("hey!there") is displayed only               //regularly after every 5 seconds.
+ //once after 5 seconds. 
+ 
+//👉clearTimeout is used to stop the code from         //👉clearInterval() method is used to stop the execution of 
+// executing setTimeout event.                          //function executed by setInterval() method.
+//clearTimeout(var) uses the variable returned          //clearInterval(var) uses the variable returned      
+ //by the setTimeout() method.                           //by the setInterval() method.
+ 
+//example:                                                //example
+const text = document.querySelector("p");
+const stop = document.querySelector("button");
+let num=0;
+function addText(){
+    text.innerText=num;
+    num++;
+}  
+
+let stopText = setInterval(addText,1000); 
+stop.addEventListener("click",()=>{
+    clearInterval(stopText);
+})           
+
+
+
+
+
+
+
+
+
+
+
+ </script>
+</body>
+</html>

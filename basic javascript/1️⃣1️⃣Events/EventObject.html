@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventObject</title>
+    <style>
+        body{
+            background-color:darkslateblue;
+            
+        }
+        p{
+            color:darkslateblue;
+            width:100px;
+            height:60px;
+            margin:20px auto;
+            font-size:20px;
+            border:1px solid lightblue;
+            border-radius:10px;
+            background-color:white;
+            box-shadow:2px 2px 4px white;
+            padding: 10px;
+        }
+        p:hover{
+            box-shadow:none; 
+        }
+    </style>
+</head>
+<body>
+    <!--Event object is the parent of all the occurring events.
+        Event object tells us all the details about the events occurred.
+       -->
+       <p id="way4">
+        add Event Listener
+       </p>
+       <script>
+         const way4 = document.getElementById("way4");
+         way4.addEventListener("click",()=>{    
+            alert("I am fired.");
+            console.log(event); //it returns an object containing all the details of event fired as key value pairs.
+            console.log(event.type);//it returns the type of event occurred.
+            console.log(event.target);//returns the element on which the event is fired.
+        });
+       </script>
+</body>
+</html>

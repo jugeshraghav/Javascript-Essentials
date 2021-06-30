@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventObject</title>
+    <style>
+        body{
+            background-color:darkslateblue;
+            
+        }
+        p{
+            color:white;
+            width:900px;
+            height:250px;
+            margin:20px auto;
+            font-size:30px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!--keyboard Events are the events that occur when keyboard keys are pressed.
+        mostly used keyboard events are: keyup,keydown.
+       -->
+       <p id="way4">
+        
+       </p>
+       <script>
+        //element is accessed using the below method
+         const way4 = document.getElementById("way4");
+        //  keypress event is fired when the keyboard ley is pressed.
+         document.addEventListener("keypress",()=>{    
+            way4.innerText=`the key pressed is ${event.key} and the id is ${event.code}`;
+        });
+
+         //keydown event is fired when key is down(clicked)
+        document.addEventListener("keydown",()=>{    
+            way4.style.color="yellow";
+        });
+        
+        //keyup event is fired when pressed key of keyboard is released.
+        document.addEventListener("keyup",()=>{    
+            way4.style.color="red";
+        });
+        //Keyboard event sequence: if all the three events are present then keydown will be fired first followed by 
+        //the keypress and keyup event.
+        //difference between keypress and keydown
+        
+       </script>
+</body>
+</html>

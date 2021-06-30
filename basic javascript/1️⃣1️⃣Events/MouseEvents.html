@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EventObject</title>
+    <style>
+        body{
+            background-color:darkslateblue;
+            
+        }
+        p{
+            color:white;
+            width:900px;
+            height:250px;
+            margin:20px auto;
+            font-size:30px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!--Mouse Events are the events that occur when mouse comes in contact with the html elements.
+        mostly used mouse events are: mouseup,mousedown,mouseenter,mouseleave
+       -->
+       <p id="way4">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi blanditiis doloribus quo quos error soluta, vel praesentium beatae quia quibusdam?Lorem, ipsum dolor sit amet consectetur adipisicing elit. Deserunt modi aliquid eligendi ad vitae quam tempora iste natus. Nesciunt expedita corporis vero suscipit eligendi, voluptates consequatur quam amet recusandae quibusdam ullam totam minus voluptatibus voluptatum, harum sequi inventore error excepturi!
+       </p>
+       <script>
+        //element is accessed using the below method
+         const way4 = document.getElementById("way4");
+         //mousedown event is fired when the text is clicked.
+         way4.addEventListener("mousedown",()=>{    
+            way4.style.color="yellow";
+
+        });
+        //after the click is released the mouseUp event is fired.
+         way4.addEventListener("mouseup",()=>{    
+            way4.style.color="pink";
+        });
+        //this event is fired when mouse enters some specified element , not clicked.
+        way4.addEventListener("mouseenter",()=>{    
+            way4.style.backgroundColor="black";
+            // alert("mouse entered the text.");//alert is shown first then the background color changed.
+        });
+        //this event is fired whne mouse leaves some specified element
+        way4.addEventListener("mouseleave",()=>{    
+            way4.style.backgroundColor="green";
+            // alert("mouse left the text."); //alert is shown first then the background color changed.
+        });
+       </script>
+</body>
+</html>
